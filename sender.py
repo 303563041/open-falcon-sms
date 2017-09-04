@@ -18,9 +18,8 @@ class sendMessage(restful.Resource):
         content = request.form['content']
         submail = MESSAGEXsend(MESSAGE_CONFIGS)
         submail.add_to(cellPhone)
-        submail.add_var("txt", content)
-        #content = '【liang.chen】{0}'.format(test.decode('utf8'))
-        submail.set_project(content)
+        submail.set_project("RIEdd4")
+        submail.add_var('txt', content)
         return submail.xsend()
 api.add_resource(sendMessage, '/api/v2/send')
 

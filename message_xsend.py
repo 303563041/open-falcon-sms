@@ -42,10 +42,6 @@ class MESSAGEXsend:
         email project sign
         '''
         self.project = ''
-        '''
-        message content
-        '''
-        self.content = ''
 
         '''
         vars: the submail email text content filter
@@ -71,8 +67,7 @@ class MESSAGEXsend:
     Set email project
     '''
     def set_project(self, project):
-        #self.project = project
-        self.content = project
+        self.project = project
 
     '''
     AddVar function
@@ -107,15 +102,14 @@ class MESSAGEXsend:
         '''
         set project sign
         '''
-        #request['project'] = self.project
-        request['content'] = self.content
+        request['project'] = self.project
 
         '''
         convert vars array to json string, if is not empty
         '''
         if len(self.vars) != 0:
             request['vars'] = json.dumps(self.vars)
-        print request
+
         return request
      
     '''
@@ -143,4 +137,4 @@ class MESSAGEXsend:
         '''
         build request and send email and return the result
         '''
-        return message.send(self.build_request())
+        return message.xsend(self.build_request())

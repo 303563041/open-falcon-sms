@@ -31,9 +31,7 @@ class Message:
         sign_str = ''
         for key in para_keys:
             sign_str += "%s=%s&"%(key,request[key])
-        print sign_str
         sign_str = appid+appkey+sign_str[:-1]+appid+appkey
-        print sign_str
         if self.sign_type == 'md5':
             hash=hashlib.md5()
             hash.update(sign_str)
@@ -42,7 +40,6 @@ class Message:
             hash=hashlib.sha1() 
             hash.update(sign_str)
             self.signature = hash.hexdigest()
-        print self.signature
 
     def __http_get(self,url):
         return eval(urllib2.urlopen(url = url).read())
@@ -88,8 +85,8 @@ class Message:
         elif self.message_configs['sign_type'] not in sign_type_state:
             self.sign_type = 'normal'
         else:
-            self.sign_type = self.message_configs['sign_type'] 
-            request['sign_type'] = self.message_configs['sign_type']
+            self.sign_type = self.mail_config['sign_type'] 
+            request['sign_type'] = self.mail_config['sign_type']
 
         '''
         @create signature
