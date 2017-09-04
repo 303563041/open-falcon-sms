@@ -35,12 +35,12 @@ MESSAGE_CONFIGS = {}
 '''
 Message appid
 '''
-MESSAGE_CONFIGS['appid'] = '14539'
+MESSAGE_CONFIGS['appid'] = 'message_appid'
 
 '''
 Message appkey
 '''
-MESSAGE_CONFIGS['appkey'] = '0fcd5b7af19805a3b240543facbaa2f4'
+MESSAGE_CONFIGS['appkey'] = 'message_appkey'
 
 '''
 Message Sign type
