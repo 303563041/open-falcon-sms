@@ -31,7 +31,7 @@ class sendCall(restful.Resource):
     def post(self):
         _to = request.form['tos']
         _message = request.form['content']
-        message_url = "http://sms-api.funplusgame.com/api/v2/send"
+        message_url = "http://sms-api.xxxxxxxx/api/v2/send"
 
         header = {
             'Token': 'xxxxxx'
